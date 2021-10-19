@@ -25,22 +25,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: britannio/action-install-flutter@v1.1
       
-      - name: Switch directory
-        run: cd ./app/leda_flutter/
-
-      - name: Run flutter pub get
-        run: flutter pub get
-        
-      - name: Run flutter analyze
-        run: flutter analyze .
-        
-      - name: Run flutter test
-        run: flutter test
-        
-      - name: Install dartdoc
-        run: flutter pub global activate dartdoc
-        
-      - name: Run dartdoc
-        run: dartdoc
+      - name: Run flutter application
+        working-directory: ./app/leda_flutter
+        run: |
+          flutter pub get
+          flutter pub analyze .
+          flutter test
+          flutter pub global activate dartdoc
+          dartdoc
 
 
