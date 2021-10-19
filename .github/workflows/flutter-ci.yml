@@ -26,7 +26,7 @@ jobs:
       - uses: britannio/action-install-flutter@v1.1
       
       - name: Switch directory
-        run: cd app/leda_flutter/
+        run: cd ./app/leda_flutter/
 
       - name: Run flutter pub get
         run: flutter pub get
