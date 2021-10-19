@@ -9,10 +9,6 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  
-  defaults:
-    run:
-      working-directory: app/leda_flutter
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,6 +23,7 @@ jobs:
       - uses: britannio/action-install-flutter@v1.1
       
       - name: Run flutter application
+        working-directory: ./app/leda_flutter
         run: |
           flutter pub get
           flutter pub analyze .
